@@ -1,8 +1,7 @@
 import React from "react";
-
 const Group=({children})=>{
 
-    return <div >
+    return <div className="Group">
         {children}
     </div>
 }

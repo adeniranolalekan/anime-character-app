@@ -1,8 +1,9 @@
 import React, {useEffect} from "react";
-import './Home.css';
 import Group from "./Group";
 import Anime from "./Anime";
 import {connect} from "react-redux";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
 
 import store from "./store";
 import {fetchTopAnimes} from "./actions/apiActions";
@@ -16,8 +17,10 @@ const Home=({animes,fetchTopAnimes})=>{
       fetchAnimes()
   },[])
     return <div className="Home">
-        <input id="id_filter" maxLength="254" name="filter-key"  />
-        <button type="submit" name="search" className="btn" value='Sign Up'>Go</button>
+        <div className="Header">
+            <input id="id_filter" className="Searchbox" maxLength="254" name="filter-key" placeholder="Search for anime" />
+            <FontAwesomeIcon className="CheveronRight" icon={faChevronRight}/>
+        </div>
         <Group>
             {animes.map(animeItem=><Anime anime={animeItem} key={animeItem.mal_id}/> )}
         </Group>

@@ -4,10 +4,10 @@ const Anime=({anime})=>{
     const{title,image_url,score}=anime;
 
     return <div className="Anime">
-        <img src={image_url} alt={title} className="anime_image"/>
+        <img src={image_url} alt={title} className="Poster"/>
         <div className="anime_details">
-            <p className="anime_details_title">{title}</p>
-            <p className="anime_details_score">{score}</p>
+            <p className="Title">{title}</p>
+            <p className="Score">Score: {score}</p>
         </div>
     </div>
 }

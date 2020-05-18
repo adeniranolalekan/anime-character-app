@@ -2,21 +2,111 @@
   background-color: rgba(25,25,27,1);
   display: flex;
   justify-content: center;
-  mini-height:100vh;
+  height:100vh;
   align-items: center;
 }
 .App:before {
   content: "ANIME APP";
   position: fixed;
-  top: 18vh;
-  left: 10vw;
+  top: 10vh;
+  left: 1vw;
   font-size: 9vw;
   color: rgba(255, 255, 255, 0.03);
 }
-@media screen and (min-width: 768px) {
-  .Home {
-    width: 640px;
-    height: 390px;
-    border-radius: 15px;
-  }
+.Home {
+  width: 940px;
+  height: 90vh;
+
+}
+.Header{
+  height: 70px;
+  display: flex;
+  color: #8b9095;
+  font-size: 0.8rem;
+  align-items: center;
+  width: 100%;
+}
+.Header{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 2px;
+  padding: 1.4rem 2rem 1.6rem;
+  background: rgba(57, 63, 84, 0.8);
+    margin-bottom: 70px;
+
+}
+Header:after {
+     content: "";
+     position: absolute;
+     left: 0px;
+     right: 0px;
+     bottom: 0px;
+     z-index: 999;
+     height: 2px;
+     border-bottom-left-radius: 2px;
+     border-bottom-right-radius: 2px;
+     background-position: 0% 0%;
+     background: linear-gradient(to right, #B294FF, #57E6E6, #FEFFB8, #57E6E6, #B294FF, #57E6E6);
+     background-size: 500% auto;
+     animation: gradient 3s linear infinite;
+ }
+.Header input {
+  flex-grow: 1;
+  color: #BFD2FF;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+  vertical-align: middle;
+
+}
+.Header input::-webkit-input-placeholder {
+     color: #7881A1;
+ }
+.CheveronRight {
+    color: #7881A1;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+    transition: color .25s;
+}
+.CheveronRight:hover {
+   color: #BFD2FF;
+ }
+.Group{
+  display: flex;
+  flex: 1 1 0;
+  flex-wrap: wrap;
+  height: 100vh;
+  overflow:auto;
+  height: 80vh;
+  align-items: center;
+
+}
+.Searchbox{
+  width: 80%;
+  border-style: none; background: transparent; outline: none;
+}
+.Anime{
+  padding: 0.6rem;
+}
+.Poster{
+  border-radius: 4px;
+  width: 200px;
+  height: 251px;
+}
+.Title{
+  color: #525661;
+  margin-bottom: 4px;
+  font-size: 1rem;
+  width: 200px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.Score{
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
 }
