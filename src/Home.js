@@ -24,7 +24,7 @@ const Home=({isloading,animes,fetchTopAnimes})=>{
         </div>
         <Group>
             {isloading?<Loader type="Oval" color={"#00BFFF"}  height={100} width={100} timeout={3000}/>
-                :animes.map(animeItem=><Anime anime={animeItem} key={animeItem.mal_id}/> )}
+                :animes.map(animeItem=><a href={`/animes/${animeItem.mal_id}`} key={animeItem.mal_id}> <Anime anime={animeItem} key={animeItem.mal_id}/> </a>)}
         </Group>
     </div>;
 

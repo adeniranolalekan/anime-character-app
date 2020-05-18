@@ -5,14 +5,24 @@
   height:100vh;
   align-items: center;
 }
+.Home:before {
+    content: "Top 50 Animes";
+    position: fixed;
+    top: 15vh;
+    left: 65vw;
+    font-size: 3vw;
+    color: rgba(57, 63, 84, 0.8);
+}
 .App:before {
   content: "ANIME APP";
   position: fixed;
   top: 10vh;
   left: 1vw;
-  font-size: 9vw;
+  font-size: 7vw;
   color: rgba(255, 255, 255, 0.03);
 }
+
+
 .Home {
   width: 940px;
   height: 90vh;
@@ -132,4 +142,8 @@ Header:after {
 .Score{
   font-size: 11px;
   color: rgba(255, 255, 255, 0.5);
+}
+.AnimeLink{
+    text-decoration: none;
+    cursor: pointer;
 }
