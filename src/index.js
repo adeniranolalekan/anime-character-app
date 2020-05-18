@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter as Router} from "react-router-dom"
 import ReactDOM from 'react-dom';
 import './index.css';
 import store from "./store"
@@ -8,7 +9,9 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
  <Provider store={store}>
+     <Router>
     <App />
+     </Router>
  </Provider>,
   document.getElementById('root')
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import {Route}from 'react-router-dom'
 import Home from './Home'
 import AnimeArea from "./AnimeArea"
 import './App.css';
@@ -7,7 +7,8 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-<Home/>
+        <Route exact path="/" component={Home}/>
+        <Route exact path={"/animes/:id"} component={AnimeArea}/>
     </div>
   );
 }
