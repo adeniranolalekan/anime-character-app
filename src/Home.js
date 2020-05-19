@@ -6,8 +6,10 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import Loader from "react-loader-spinner"
 
+
 import store from "./store";
-import {fetchTopAnimes} from "./actions/apiActions";
+import {fetchTopAnimes, selectAnime} from "./actions/apiActions";
+
 
 const Home=({isloading,animes,fetchTopAnimes})=>{
 
@@ -24,11 +26,13 @@ const Home=({isloading,animes,fetchTopAnimes})=>{
         </div>
         <Group>
             {isloading?<Loader type="Oval" color={"#00BFFF"}  height={100} width={100} timeout={3000}/>
-                :animes.map(animeItem=><a href={`/animes/${animeItem.mal_id}`} key={animeItem.mal_id}> <Anime anime={animeItem} key={animeItem.mal_id}/> </a>)}
+                :animes.map(animeItem=><Anime anime={animeItem} key={animeItem.mal_id}/> )}
         </Group>
     </div>;
 
 }
+
+
 function mapStateToProps({isloading,animes}) {
 return{ isloading,animes};
 }
