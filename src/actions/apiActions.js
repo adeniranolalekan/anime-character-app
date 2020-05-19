@@ -1,7 +1,16 @@
-import {API_END,API_START,FETCH_ANIMES,API,
+import {
+    API_END,
+    API_START,
+    FETCH_ANIMES,
+    API,
     FETCH_ANIMES_REQUESTED,
     FETCH_ANIMES_SUCCEEDED,
-    FETCH_ANIMES_FAILED,} from "../constants/actionTypes";
+    FETCH_ANIMES_FAILED,
+    ANIME_SELECTED,
+    FETCH_SELECTED_ANIME_REQUESTED,
+    FETCH_SELECTED_ANIME_FAILED,
+    FETCH_CHARACTERS_REQUESTED, FETCH_CHARACTERS_SUCCEEDED, FETCH_SELECTED_ANIME_SUCCEEDED,
+} from "../constants/actionTypes";
 import {noOp} from "../utils/appUtils"
 import axios from "axios";
 
@@ -34,9 +43,51 @@ export const fetchTopAnimes = () => async dispatch => {
                 payload: [],});
     });
 }
+export const fetchSelectedAnime = (id) => async dispatch => {
+    dispatch({type: FETCH_SELECTED_ANIME_REQUESTED})
+    // make actual request
+
+    axios.request({
+        url:`/anime/${id}`,
+        method:"GET",
+
+    }).then(({data}) => {
+        dispatch(setSelectedAnime(data));
+    }).catch(error => {
+        dispatch({type: FETCH_SELECTED_ANIME_FAILED,
+            payload: [],});
+    });
+}
+export const fetchCharacters = (id) => async dispatch => {
+    dispatch({type: FETCH_CHARACTERS_REQUESTED})
+    // make actual request
+
+    axios.request({
+        url:`/anime/${id}/characters_staff`,
+        method:"GET",
+
+    }).then(({data}) => {
+        dispatch(setCharacters(data));
+    }).catch(error => {
+        dispatch({type: FETCH_CHARACTERS_SUCCEEDED,
+            payload: [],});
+    });
+}
 function setAnimes(animes) {
     console.log(animes);
     return{type: FETCH_ANIMES_SUCCEEDED,
         payload: animes || [],};
+
+}
+function setSelectedAnime(anime) {
+
+    return{type: FETCH_SELECTED_ANIME_SUCCEEDED,
+        payload: anime || [],};
+
+}
+function setCharacters(characters) {
+
+    return{type: FETCH_CHARACTERS_SUCCEEDED,
+        payload: characters|| [],};
 
 }
