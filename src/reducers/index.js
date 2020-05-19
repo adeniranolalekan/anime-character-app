@@ -10,6 +10,7 @@ const rootReducer= combineReducers({
     isloading,
     animes,
     characters,
+    selectedAnime
 });
 
 const persistConfig={

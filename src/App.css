@@ -150,12 +150,38 @@ a.AnimeLink{
 a:-webkit-any-link{
     text-decoration:none !important;
 }
+.AnimeArea {
+    width: 940px;
+    height: 90vh;
+    background-color: #FFFFFF;
+
+}
 .AnimeDetails{
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-rows: 8% 10% 10% auto;
 }
 .AnimeDetailsPoster{
     grid-column: 1;
-    grid-row: 1/ span 2;
+    grid-row: 1/span 2;
+    height: 20vh;
+}
+.AnimeTitle{
+    grid-column: 2;
+    grid-row: 1;
+}
+.AnimeSynopsis{
+    grid-column: 2;
+    grid-row: 2;
+    overflow-wrap: break-word;
+}
+.AnimeInformation{
+    grid-column: 1;
+    grid-row: 3;
+    overflow-wrap: break-word;
+
+}
+.AnimeCharacters{
+    grid-column: 1;
+    grid-row: 4;
 }
