@@ -28,7 +28,7 @@ const AnimeArea =({match,isloading,selectedAnime,characters,fetchSelectedAnime,f
             <Link to={`/`}><FontAwesomeIcon className="CheveronRight" icon={faChevronLeft}/> Back to home</Link>
         </div>
         <div className="AnimeDetails">
-            <img src={selectedAnime.image_url} className="AnimeDetailsPoster"></img>
+            <img src={selectedAnime.image_url} alt={selectedAnime.title} className="AnimeDetailsPoster"></img>
             <div className="AnimeTitle" >
                 <h1>{selectedAnime.title}</h1>
             </div>
