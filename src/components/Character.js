@@ -8,7 +8,7 @@ const Anime=({character})=>{
         <img src={image_url} alt={name} className="Poster"/>
         <div className="anime_details">
             <p className="Title">{name}</p>
-            <p className="Score">Score: {role}</p>
+            <p className="Role">Role: {role}</p>
         </div>
     </div>
 }
