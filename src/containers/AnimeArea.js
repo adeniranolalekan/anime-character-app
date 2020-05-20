@@ -4,11 +4,10 @@ import {connect} from "react-redux";
 import {Link} from "react-router-dom";
 import Character from "../components/Character"
 
-import {fetchCharacters, fetchSelectedAnime, fetchTopAnimes, selectAnime} from "../actions/apiActions";
+import {fetchCharacters, fetchSelectedAnime} from "../actions/apiActions";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronLeft} from "@fortawesome/free-solid-svg-icons";
 import Loader from "react-loader-spinner";
-import Anime from "../components/Anime";
 
 const AnimeArea =({match,isloading,selectedAnime,characters,fetchSelectedAnime,fetchCharacters})=>{
 

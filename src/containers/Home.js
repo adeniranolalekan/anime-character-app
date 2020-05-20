@@ -6,9 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import Loader from "react-loader-spinner"
 
-
-import store from "../store";
-import {fetchTopAnimes, selectAnime} from "../actions/apiActions";
+import {fetchTopAnimes} from "../actions/apiActions";
 
 
 const Home=({isloading,animes,fetchTopAnimes})=>{

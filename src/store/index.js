@@ -3,11 +3,8 @@ import reducer from "../reducers"
 import logger from "redux-logger"
 import thunk from "redux-thunk"
 import {persistStore} from "redux-persist";
-/*const logger=(store)=>(next)=>(action)=>{
-    console.log("action fired",action);
-    next(action);
-}*/
-const error =(store)=>(next)=>(action)=>{
+
+const error =()=>(next)=>(action)=>{
     try{
         next(action)
     }catch (e) {

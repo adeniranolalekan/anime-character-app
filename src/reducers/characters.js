@@ -1,7 +1,4 @@
 
-// const initialState={
-//     characters:[],
-// }
 import { FETCH_CHARACTERS_SUCCEEDED} from "../constants/actionTypes";
 
 export default function characters(state=[], action){
