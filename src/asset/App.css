@@ -164,13 +164,16 @@ a:-webkit-any-link{
 .AnimeDetails{
     display: grid;
     grid-template-columns: 30% 70%;
-    grid-template-rows: 8% 10% 10% auto;
+    grid-template-rows: 8% 10%  10% 10% auto;
     background-color: #FFFFFF;
 }
 .AnimeDetailsPoster{
+    margin-left: 2vh;
+    margin-top: 3vh;
     grid-column: 1;
-    grid-row: 1/span 2;
-    height: 20vh;
+    grid-row: 1/span 3;
+    height: 30vh;
+    border-radius: 2vh;
 }
 .AnimeTitle{
     grid-column: 2;
@@ -180,10 +183,15 @@ a:-webkit-any-link{
     grid-column: 2;
     grid-row: 2;
     overflow-wrap: break-word;
+
 }
-.AnimeDetails .Group{
+
+.AnimeCharacters{
     grid-column: 2;
     grid-row: 4;
+}
+.AnimeDetails .Group{
+
     display: flex;
     flex: 1 1 0;
     flex-wrap: wrap;
@@ -191,8 +199,10 @@ a:-webkit-any-link{
     height: 58vh;
 }
 .AnimeInformation{
+    margin-top: 10vh;
+    margin-left: 2vh;
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 4;
     overflow-wrap: break-word;
 
 }

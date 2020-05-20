@@ -2,12 +2,15 @@ import React, {useEffect} from "react";
 import Group from "../components/Group";
 import {connect} from "react-redux";
 import {Link} from "react-router-dom";
+import Character from "../components/Character"
 
 import {fetchCharacters, fetchSelectedAnime, fetchTopAnimes, selectAnime} from "../actions/apiActions";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronLeft} from "@fortawesome/free-solid-svg-icons";
+import Loader from "react-loader-spinner";
+import Anime from "../components/Anime";
 
-const AnimeArea =({match,selectedAnime,fetchSelectedAnime,fetchCharacters})=>{
+const AnimeArea =({match,isloading,selectedAnime,characters,fetchSelectedAnime,fetchCharacters})=>{
 
     useEffect(()=>{
         async  function fetchAnimeProperties(){
@@ -46,10 +49,12 @@ const AnimeArea =({match,selectedAnime,fetchSelectedAnime,fetchCharacters})=>{
                     <h6>Score: {selectedAnime.score}</h6>
                 </div>
             </div>
-            <div>
-            <Group >
+            <div className="AnimeCharacters">
                 <h2>Characters</h2>
+            <Group >
 
+                {isloading?<Loader type="Oval" color={"#00BFFF"}  height={100} width={100} timeout={3000}/>
+                    :characters.map(characterItem=><Character character={characterItem} key={characterItem.mal_id}/> )}
             </Group>
             </div>
         </div>
@@ -58,7 +63,7 @@ const AnimeArea =({match,selectedAnime,fetchSelectedAnime,fetchCharacters})=>{
     </div>
 }
 
-function mapStateToProps({isloading,selectedAnime}) {
-    return{ isloading,selectedAnime};
+function mapStateToProps({isloading,selectedAnime,characters}) {
+    return{ isloading,selectedAnime,characters};
 }
 export default connect(mapStateToProps,{fetchSelectedAnime,fetchCharacters})(AnimeArea)
