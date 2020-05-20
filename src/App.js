@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route,Switch}from 'react-router-dom'
-import Home from './Home'
-import AnimeArea from "./AnimeArea"
-import './App.css';
+import Home from './containers/Home'
+import AnimeArea from "./containers/AnimeArea"
+import './asset/App.css';
 
 function App() {
   return (

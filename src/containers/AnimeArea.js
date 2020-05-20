@@ -1,8 +1,11 @@
 import React, {useEffect} from "react";
-import Group from "./Group";
+import Group from "../components/Group";
 import {connect} from "react-redux";
+import {Link} from "react-router-dom";
 
-import {fetchCharacters, fetchSelectedAnime, fetchTopAnimes, selectAnime} from "./actions/apiActions";
+import {fetchCharacters, fetchSelectedAnime, fetchTopAnimes, selectAnime} from "../actions/apiActions";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faChevronLeft} from "@fortawesome/free-solid-svg-icons";
 
 const AnimeArea =({match,selectedAnime,fetchSelectedAnime,fetchCharacters})=>{
 
@@ -18,6 +21,10 @@ const AnimeArea =({match,selectedAnime,fetchSelectedAnime,fetchCharacters})=>{
 
     },[])
     return <div className="AnimeArea">
+        <div className="Header">
+
+            <Link to={`/`}><FontAwesomeIcon className="CheveronRight" icon={faChevronLeft}/> Back to home</Link>
+        </div>
         <div className="AnimeDetails">
             <img src={selectedAnime.image_url} className="AnimeDetailsPoster"></img>
             <div className="AnimeTitle" >
@@ -39,10 +46,12 @@ const AnimeArea =({match,selectedAnime,fetchSelectedAnime,fetchCharacters})=>{
                     <h6>Score: {selectedAnime.score}</h6>
                 </div>
             </div>
-            <Group classname="AnimeCharacters">
+            <div>
+            <Group >
                 <h2>Characters</h2>
 
             </Group>
+            </div>
         </div>
 
 

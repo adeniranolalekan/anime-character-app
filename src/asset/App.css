@@ -59,6 +59,9 @@
   align-items: center;
   width: 100%;
 }
+.header Link{
+    color: #7881A1;
+}
 .Header{
   position: relative;
   display: flex;
@@ -108,7 +111,7 @@ Header:after {
 .CheveronRight:hover {
    color: #BFD2FF;
  }
-.Group{
+.Home .Group{
   display: flex;
   flex: 1 1 0;
   flex-wrap: wrap;
@@ -151,15 +154,18 @@ a:-webkit-any-link{
     text-decoration:none !important;
 }
 .AnimeArea {
-    width: 940px;
+   width: 100%;
     height: 90vh;
-    background-color: #FFFFFF;
-
+    margin-top: -30px;
+}
+.AnimeArea .Header {
+    margin-bottom: 20px;
 }
 .AnimeDetails{
     display: grid;
     grid-template-columns: 30% 70%;
     grid-template-rows: 8% 10% 10% auto;
+    background-color: #FFFFFF;
 }
 .AnimeDetailsPoster{
     grid-column: 1;
@@ -175,13 +181,18 @@ a:-webkit-any-link{
     grid-row: 2;
     overflow-wrap: break-word;
 }
+.AnimeDetails .Group{
+    grid-column: 2;
+    grid-row: 4;
+    display: flex;
+    flex: 1 1 0;
+    flex-wrap: wrap;
+    overflow:auto;
+    height: 58vh;
+}
 .AnimeInformation{
     grid-column: 1;
     grid-row: 3;
     overflow-wrap: break-word;
 
-}
-.AnimeCharacters{
-    grid-column: 1;
-    grid-row: 4;
 }

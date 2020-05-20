@@ -1,14 +1,14 @@
 import React, {useEffect} from "react";
-import Group from "./Group";
-import Anime from "./Anime";
+import Group from "../components/Group";
+import Anime from "../components/Anime";
 import {connect} from "react-redux";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronRight} from "@fortawesome/free-solid-svg-icons";
 import Loader from "react-loader-spinner"
 
 
-import store from "./store";
-import {fetchTopAnimes, selectAnime} from "./actions/apiActions";
+import store from "../store";
+import {fetchTopAnimes, selectAnime} from "../actions/apiActions";
 
 
 const Home=({isloading,animes,fetchTopAnimes})=>{
